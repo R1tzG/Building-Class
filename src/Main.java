@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        Building one = new Apartment(50);
-        Building two = new Apartment(30);
+        Building one = new OfficeSpace(15.5, 20);
 
-        System.out.println(one.compareTo(two));
+        one.calcCost(12.5);
+        System.out.println(one.toString());
     }
 }

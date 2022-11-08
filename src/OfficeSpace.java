@@ -1,10 +1,12 @@
-public class Apartment extends Building{
+public class OfficeSpace extends Building {
     double costPerFloor;
     double totalCost;
+    double sqrftPerFloor;
 
-    public Apartment(double newCostPerFloor) {
+    public OfficeSpace(double newCostPerFloor, double newSqrftPerFloor) {
         costPerFloor = newCostPerFloor;
         totalCost = this.getTotalCost();
+        sqrftPerFloor = newSqrftPerFloor;
     }
 
     public double getCostPerFloor() {
@@ -12,7 +14,7 @@ public class Apartment extends Building{
     }
 
     public double getTotalCost() {
-        return (double)super.getFloors() + costPerFloor;
+        return (double)(((super.getFloors()*costPerFloor) + super.tax) + (sqrftPerFloor * 2.75));
     }
 
     public double calcCost(double getTax) {
